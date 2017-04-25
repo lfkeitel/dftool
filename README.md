@@ -25,7 +25,7 @@ starting docker build.
 The RUN directive is now a bit cleaner. Each command can be placed on a separate line without
 needing `&& \` at the end of every line.
 
-'''Dockerfile
+```Dockerfile
 FROM alpine:3.5
 
 RUN (
@@ -34,7 +34,7 @@ RUN (
             vim
     rm -rf /var/cache/apk/*
 )
-'''
+```
 
 And ending backslash is supported for breaking up long commands over separate lines such as apt-get,
 or other package installations.
