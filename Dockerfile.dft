@@ -1,0 +1,21 @@
+# I'm a comment
+FROM alpine:3.5 pull-always
+
+TAG dftool-test:5
+
+// I'm also a comment
+RUN (
+    apk update
+
+    apk add vim \
+            bind \
+            nginx
+
+    rm -rf /var/cache/apk/*
+)
+
+ENV VIM_VERSION 2.5.0
+
+EXPOSE 53/udp
+
+ENTRYPOINT ["/usr/vim"]
